@@ -13,6 +13,6 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   }
 
   FutureOr<void> _changeTheme(ChangeTheme event, Emitter<ThemeState> emit) {
-    emit(ThemeState(isDark: !state.isDark));
+    emit(ThemeState(isDark: state.isDark));
   }
 }

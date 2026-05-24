@@ -8,38 +8,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-Drawer appDrawer(BuildContext context, {String? name}) {
+Drawer appDrawer(BuildContext context, {required String name}) {
   return Drawer(
     child: Column(
       spacing: 10,
       children: [
         DrawerHeader(
-          child: InkWell(
-            onTap: () {
-              //TODO upload user image and show
-            },
-            child: CircleAvatar(
-              child: Text(
-                (name != null && name.isNotEmpty) ? " ${name[0].toUpperCase()}" : "G",
-                style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.width * 0.1,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-        ),
-        InkWell(
-          onTap: () {
-            //TODO name add users
-          },
-          child: Text(
-            (name != null && name.isNotEmpty) ? name : "Guest",
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.100001,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          child: Center(child: Text("Firebase remamber\n\t\t\t\t\t\t application.",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),))
         ),
         Divider(),
         SizedBox(

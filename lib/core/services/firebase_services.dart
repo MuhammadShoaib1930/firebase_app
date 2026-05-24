@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 class FirebaseServices {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  String name = "Guest";
   bool checkLogin() {
     User? user;
     try {
@@ -75,7 +76,6 @@ class FirebaseServices {
     }
   }
 
-
   void createDatabase(Map<String, dynamic> map) async {
     try {
       await firestore.collection("users").doc(firebaseAuth.currentUser?.uid).set(map);
@@ -90,6 +90,11 @@ class FirebaseServices {
         .doc(firebaseAuth.currentUser?.uid)
         .get();
     return data;
+  }
+
+  Future<void> getName() async {
+    final data = await readData();
+    name = data["name"];
   }
 
   void updateData(Map<String, dynamic> map) async {

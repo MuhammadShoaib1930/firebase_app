@@ -15,11 +15,12 @@ class _HomePageState extends State<HomePage> {
   String name = "";
   int age = 0;
   String task = "";
+
   @override
   Widget build(BuildContext context) {
-  double wid = MediaQuery.of(context).size.width;
+    double wid = MediaQuery.of(context).size.width;
     return Scaffold(
-      drawer: appDrawer(context,name: name),
+      drawer: appDrawer(context, name: FirebaseServices().name),
       appBar: AppBar(title: Text("Home page")),
       body: SafeArea(
         child: FutureBuilder(
